@@ -1,4 +1,5 @@
 from time import sleep
+import sys
 
 R = 24
 C = 80
@@ -30,12 +31,10 @@ LON = 0.0
 mymap = Map()
 mymap.update(REF_LAT, REF_LON, 'H')
 
-with open('out.txt') as fh:
-    for line in fh:
-        if 'latitude' in line and '.' in line:
-            LAT = float(line[17:26])
-            continue
-        if 'longitude' in line and '.' in line:
-            LON = float(line[17:27])
-            mymap.update(LAT, LON)
-            sleep(0.02)
+for line in sys.stdin:
+    if 'latitude' in line and '.' in line:
+        LAT = float(line[17:26])
+        continue
+    if 'longitude' in line and '.' in line:
+        LON = float(line[17:27])
+        mymap.update(LAT, LON)
