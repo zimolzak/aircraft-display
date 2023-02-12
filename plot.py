@@ -17,17 +17,27 @@ def lat2row(lat, rows=R, min_lat=29.6, max_lat=30.0):
     m = -1 * rows / (max_lat - min_lat)
     return int(round(m * (lat - max_lat)))
 
+def put_one_char(lat, lon, char, scr):
+    myrow = lat2row(lat)
+    mycol = long2col(lon)
+    scr.addstr(myrow, mycol, char)
+    scr.refresh()
+
 def main(stdscr):
+    # persist these 4 for later
     lat = REF_LAT
     lon = REF_LON
     myrow = lat2row(lat)
     mycol = long2col(lon)
+
+    # persist two str and 1 dict
     last_icao = ''
     last_ident = ''
     icao_ident = {}
+
     curses.initscr()  # not sure if needed
-    stdscr.addstr(myrow, mycol, "H")
-    stdscr.refresh()
+
+    put_one_char(REF_LAT, REF_LON, 'H', stdscr)
 
     for line in sys.stdin:
         if 'ICAO Addr' in line:
