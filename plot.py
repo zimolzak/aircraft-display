@@ -1,5 +1,6 @@
 from time import sleep
 import sys
+import curses
 
 R = 24
 C = 80
@@ -20,21 +21,26 @@ class Map:
         for r in range(R):
             self.matrix.append([' '] * C)
     def update(self, lat, lon, char='.'):
-        myrow = lat2row(lat)
-        mycol = long2col(lon)
         self.matrix[myrow][mycol] = char
         for row in self.matrix:
             print(''.join(row))
 
-LAT = 0.0
-LON = 0.0
-mymap = Map()
-mymap.update(REF_LAT, REF_LON, 'H')
+def main(stdscr):
+    lat = 0.0
+    lon = 0.0
+    # mymap.update(REF_LAT, REF_LON, 'H')
 
-for line in sys.stdin:
-    if 'latitude' in line and '.' in line:
-        LAT = float(line[17:26])
-        continue
-    if 'longitude' in line and '.' in line:
-        LON = float(line[17:27])
-        mymap.update(LAT, LON)
+    for line in sys.stdin:
+        if 'latitude' in line and '.' in line:
+            lat = float(line[17:26])
+            continue
+        if 'longitude' in line and '.' in line:
+            lon = float(line[17:27])
+            myrow = lat2row(lat)
+            mycol = long2col(lon)
+            stdscr.addstr(myrow, mycol, ".")
+            stdscr.refresh()
+            # mymap.update(lat, lon)
+    sleep(10)
+
+curses.wrapper(main)
