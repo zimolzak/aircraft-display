@@ -18,16 +18,18 @@ class Map:
         self.matrix = []
         for r in range(R):
             self.matrix.append([' '] * C)
-    def update(self, lat, lon):
+    def update(self, lat, lon, char='.'):
         myrow = lat2row(lat)
         mycol = long2col(lon)
-        self.matrix[myrow][mycol] = '*'
+        self.matrix[myrow][mycol] = char
         for row in self.matrix:
             print(''.join(row))
 
 LAT = 0.0
 LON = 0.0
 mymap = Map()
+mymap.update(REF_LAT, REF_LON, 'H')
+
 with open('out.txt') as fh:
     for line in fh:
         if 'latitude' in line and '.' in line:
