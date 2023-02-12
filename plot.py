@@ -23,21 +23,23 @@ def put_one_char(lat, lon, char, scr):
     scr.addstr(myrow, mycol, char)
     scr.refresh()
 
-def main(stdscr):
-    # persist these 4 for later
-    lat = REF_LAT
-    lon = REF_LON
-    myrow = lat2row(lat)
-    mycol = long2col(lon)
+def setup_map(scr):
+    put_one_char(REF_LAT, REF_LON, 'X', scr)
+    put_one_char(29.987, -95.342, 'I', scr)
+    put_one_char(29.646, -95.278, 'H', scr)
+    
 
-    # persist two str and 1 dict
+def main(stdscr):
+    # persist these for later
+    lat = 0.0
+    lon = 0.0
+    n_points = 0
     last_icao = ''
     last_ident = ''
     icao_ident = {}
 
     curses.initscr()  # not sure if needed
-
-    put_one_char(REF_LAT, REF_LON, 'H', stdscr)
+    setup_map(stdscr)
 
     for line in sys.stdin:
         if 'ICAO Addr' in line:
@@ -50,16 +52,18 @@ def main(stdscr):
             continue
         if 'longitude' in line and '.' in line:
             lon = float(line[17:27])
-            myrow = lat2row(lat)
-            mycol = long2col(lon)
             try:
                 id_str = '.' + icao_ident[last_icao]
             except KeyError:  # When ICAO has no Ident yet
                 id_str = '.'
             #if 0 <= myrow <= R and 0 <= mycol <= C:
             try:
-                stdscr.addstr(myrow, mycol, id_str)
-                stdscr.refresh()
+                n_points += 1
+                if n_points % 10 == 0:
+#                    curses.initscr()  # not sure if needed
+#                    setup_map(stdscr)
+                    n_points = 0
+                put_one_char(lat, lon, id_str, stdscr)
             except Exception:
                 pass
     sleep(10)
