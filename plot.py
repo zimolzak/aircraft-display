@@ -15,20 +15,13 @@ def lat2row(lat, rows=R, min_lat=29.6, max_lat=29.9):
     m = -1 * rows / (max_lat - min_lat)
     return int(round(m * (lat - max_lat)))
 
-class Map:
-    def __init__(self):
-        self.matrix = []
-        for r in range(R):
-            self.matrix.append([' '] * C)
-    def update(self, lat, lon, char='.'):
-        self.matrix[myrow][mycol] = char
-        for row in self.matrix:
-            print(''.join(row))
-
 def main(stdscr):
-    lat = 0.0
-    lon = 0.0
-    # mymap.update(REF_LAT, REF_LON, 'H')
+    lat = REF_LAT
+    lon = REF_LON
+    myrow = lat2row(lat)
+    mycol = long2col(lon)
+    stdscr.addstr(myrow, mycol, "H")
+    stdscr.refresh()
 
     for line in sys.stdin:
         if 'latitude' in line and '.' in line:
@@ -40,7 +33,6 @@ def main(stdscr):
             mycol = long2col(lon)
             stdscr.addstr(myrow, mycol, ".")
             stdscr.refresh()
-            # mymap.update(lat, lon)
     sleep(10)
 
 curses.wrapper(main)
