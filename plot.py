@@ -6,8 +6,6 @@ import curses
 
 R = 24
 C = 80
-REF_LAT = 29.703
-REF_LON = -95.411
 
 def long2col(longit, cols=C, min_long=-96, max_long=-95.1):
     m = cols / (max_long - min_long)
@@ -24,16 +22,14 @@ def put_one_char(lat, lon, char, scr):
     scr.refresh()
 
 def setup_map(scr):
-    put_one_char(REF_LAT, REF_LON, 'X', scr)
+    put_one_char(29.703, -95.411, 'X', scr)
     put_one_char(29.987, -95.342, 'I', scr)
     put_one_char(29.646, -95.278, 'H', scr)
-    
 
 def main(stdscr):
     # persist these for later
     lat = 0.0
     lon = 0.0
-    n_points = 0
     last_icao = ''
     last_ident = ''
     icao_ident = {}
@@ -58,12 +54,8 @@ def main(stdscr):
                 id_str = '.'
             #if 0 <= myrow <= R and 0 <= mycol <= C:
             try:
-                n_points += 1
-                if n_points % 10 == 0:
-#                    curses.initscr()  # not sure if needed
-#                    setup_map(stdscr)
-                    n_points = 0
                 put_one_char(lat, lon, id_str, stdscr)
+                setup_map(stdscr)
             except Exception:
                 pass
     sleep(10)
