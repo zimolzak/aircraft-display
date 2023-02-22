@@ -1,0 +1,2 @@
+#!/bin/sh
+NETLOGGER_QT_PLUGINS_PATH="/usr/local/share/netlogger/plugins" LD_LIBRARY_PATH="/usr/local/share/netlogger/lib" "/usr/local/share/netlogger/netlogger" 2>/dev/null
