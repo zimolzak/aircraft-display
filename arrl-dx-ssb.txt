@@ -1,0 +1,27 @@
+20 3/4 0324 zf1a   59 k   cayman
+20 3/4 0336 hi8j   59 100 dominican
+20 3/4 0339 to5m   59 1k  stmartin
+40 3/4 1222 ja2gtw 59 k   japan
+10 3/4 1842 tg9anf 59 100 guatemala
+20 3/4 2121 co2xn  59 k   cuba
+20 3/4 2127 io5o   59 500 italy
+20 3/4 2132 ed5r   59 k   spain
+10 3/4 2136 pv2g   59 k   brazil
+10 3/4 2139 8p5a   59 k   barbados
+10 3/4 2143 pv2k   59 k   brazil
+20 3/5 0830 sn7d   59 k   poland
+20 3/5 0832 9a1p   59 k   croatia
+20 3/5 0835 tm6m   59 k   france
+20 3/5 0836 sp8r   59 k   poland
+20 3/5 0839 ha1ah  59 k   hungary
+20 3/5 0840 cq8m   59 1k  azores
+20 3/5 0844 9a1a   59 k   croatia
+40 3/5 0850 jf2qnm 59 k   japan
+40 3/5 0852 jj0vnr 59 k   japan
+40 3/5 0858 ja3ybk 59 k   japan
+10 3/5 2252 wp3gw  59 100 puerto
+10 3/5 2255 py2zr  59 100 brazil
+10 3/5 2304 cb2r   59 100 chile
+10 3/5 2307 zf5t   59 k   cayman
+
+17 countries
