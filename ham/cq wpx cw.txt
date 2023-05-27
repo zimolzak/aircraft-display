@@ -1,0 +1,22 @@
+Enter your QSO data in this text area, one QSO per line. Each of the fields below must be entered for each QSO. One or more spaces must separate each item in a QSO. All dates and times must be in UTC. If the time of the QSO is not known, enter 0000.
+----------------------------------------------------------------
+Band Date Time Serial-Sent Call-Copied RST-Copied Serial-Copied 
+20   5/27 0000 1           k5zd        599        3             
+----------------------------------------------------------------
+<-Enter your QSO data starting on the next line. Do not erase this line.->
+
+ba date time ser call.. rst hisnumber
+
+__ 5/27 ____ 001 ______ 599 ___
+__ 5/27 ____ 002 ______ 599 ___
+__ 5/27 ____ 003 ______ 599 ___
+__ 5/27 ____ 004 ______ 599 ___
+__ 5/27 ____ 005 ______ 599 ___
+__ 5/27 ____ 006 ______ 599 ___
+__ 5/27 ____ 007 ______ 599 ___
+__ 5/27 ____ 008 ______ 599 ___
+__ 5/27 ____ 009 ______ 599 ___
+__ 5/27 ____ 010 ______ 599 ___
+__ 5/27 ____ 011 ______ 599 ___
+__ 5/27 ____ 012 ______ 599 ___
+__ 5/27 ____ 013 ______ 599 ___
