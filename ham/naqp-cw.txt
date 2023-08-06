@@ -1,0 +1,25 @@
+name, State
+
+2023-08-05
+
+1928 20M N6AR LARRY FL
+2047 20M AB0TX MIKE KS 
+2100 20m kr2aa eric ny
+2105 20M N9RV PAT Mt
+2113 20M W1VE gerry vt
+2120 20m kb8gae rich oh
+2122 20m k6rc david ca
+2124 20m k6xx bob ca
+2130 20m n3zz tom ca
+2345 20m n4xl tom sc
+2349 20m aa3b bud pa 
+2350 20m k6nr dana ca
+2353 20m w7cxx jack ut 
+2356 20m n7ir gary az
+
+
+
+0543 40 aa2il joe ca
+0548 40 w6ayc joe ca
+0551 40 kt7e joe or
+0555 40 wa5pok troll tn
